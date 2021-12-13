@@ -4,6 +4,6 @@
 
 @section('content')
 
-<h1>Home Page Placeholder</h1>
+<h3>Home Page Placeholder</h3>
 
 @endsection

@@ -20,6 +20,22 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #68BBE3">
+        <div class="container-fluid col-md-10">
+          <a class="navbar-brand" href="#"><b>DRE</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Placeholder</a>
+              <a class="nav-link" href="#">Placeholder</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-1"></div>
