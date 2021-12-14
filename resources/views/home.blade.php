@@ -7,3 +7,7 @@
 <h3>Home Page Placeholder</h3>
 
 @endsection
+
+@section('footer')
+
+@endsection
