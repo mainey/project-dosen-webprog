@@ -28,14 +28,13 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #68BBE3">
     @endif
         <div class="container-fluid col-md-10">
-            <a class="navbar-brand text-light" href="#"><b>DRE</b></a>
+            <a class="navbar-brand text-light" href="{{ url('/') }}"><b>DRE</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                <a class="nav-link text-light" aria-current="page" href="#">Home</a>
-                <a class="nav-link text-light" href="#">Listing</a>
+                <a class="nav-link text-light" href="{{ Route('propertiesHome') }}">Properties</a>
                 </div>
             </div>
         </div>
