@@ -47,18 +47,14 @@
         </div>
     </div>
 
-
-    <footer class="fixed-bottom" style="background-color: #68BBE3">
-      <div class="p-3 ml-auto">
-        <h2>DRE ©2021</h2>
-      </div>
-    </footer>
-
-    @yield('footer')
-
     {{-- Bootstrap JS --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+<footer>
+    <div class="text-center text-light" style="background-color: #68BBE3; padding: 10px">
+      Copyright © 2021 DRE
+    </div>
+</footer>
 </html>
