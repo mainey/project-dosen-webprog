@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Home
 Route::resource('/', HomeController::class);
+
+// Properties
+Route::get('/properties', [PropertyController::class, 'viewHomePage'])->name("propertiesHome");
