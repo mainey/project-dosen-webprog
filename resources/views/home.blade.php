@@ -28,7 +28,7 @@
 
     {{-- Buat Featured Items, bikin card templat dulu, terus pake db buat tampilin 3 aja --}}
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+        <div class="row row-cols-md-3 g-4">
             <div class="col">
                 <div class="card border-0 building-card">
                     <a href="">
