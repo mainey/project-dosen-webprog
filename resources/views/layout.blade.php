@@ -43,9 +43,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-1"></div>
             @yield('content')
-            <div class="col-md-1"></div>
         </div>
     </div>
 
