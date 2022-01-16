@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <h2 class="property-view-title underline" style="">
-                                Property Details
+                                Property Summary
                             </h2>
                             <div class="property-summary">
                                 Lorem Ipsum
