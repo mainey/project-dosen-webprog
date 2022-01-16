@@ -132,6 +132,12 @@ button:hover::before {
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 
+.building-card:hover{
+    transform: scale(1.02);
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 4px 12px;
+    transition: .2s
+}
+
 .card-body {
     min-height: 230px;
 }
