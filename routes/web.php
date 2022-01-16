@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 // Home
 Route::resource('/', HomeController::class);
 
+// About Us
+Route::get('/aboutus', [HomeController::class, 'viewAboutUs'])->name("aboutUs");
+
 // Properties
 Route::get('/properties', [PropertyController::class, 'viewHomePage'])->name("propertiesHome");
 

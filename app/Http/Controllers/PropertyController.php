@@ -18,4 +18,6 @@ class PropertyController extends Controller
 
         return view('properties.propertiesView', compact('property'));
     }
+
 }
+

@@ -36,9 +36,25 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                 <a class="nav-link text-light" href="{{ Route('propertiesHome') }}">Properties</a>
-                <a class="nav-link text-light" href="#">About Us</a>
+                <a class="nav-link text-light" href="{{ Route('aboutUs')}}">About Us</a>
                 {{-- Add guard buat login, klo udh login ubah jadi nama user --}}
-                <a class="nav-link text-light" href="{{ Route('loginUser')}}">Login / Register</a>
+                @if (auth()->user() != null)
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Hello, {{auth()->user()->name}}!
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                  </li>
+                @else
+                    <a class="nav-link text-light" href="{{ Route('loginUser')}}">Login / Register</a>
+                @endif
+                
+
                 </div>
             </div>
         </div>
