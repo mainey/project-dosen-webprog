@@ -261,6 +261,7 @@ input {
 	font-size: inherit;
 	font-family: inherit;
 	padding: 0.5rem;
+    margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 	color: var(--text);
 	background: var(--bg);

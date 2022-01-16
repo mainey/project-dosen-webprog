@@ -23,7 +23,7 @@
                 Featured Properties
             </h2>
             {{-- <a href="" class="btn bg-light ms-auto p-2 featured-buttons">More Projects</a> --}}
-            <button class="btn bg-light ms-auto p-2 featured-buttons">More Projects</button>
+            <button class="btn bg-light ms-auto p-2 featured-buttons big-button">More Projects</button>
         </div>
     </div>
 

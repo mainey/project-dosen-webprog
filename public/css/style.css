@@ -10,7 +10,7 @@ body, html {
     background-position: center center;
 }
 
-button {
+.big-button {
     z-index: 1;
     position: relative;
     font-size: inherit;
@@ -24,7 +24,7 @@ button {
     transition: color 0.4s ease-in-out;
 }
 
-button::before {
+.big-button::before {
     content: '';
     z-index: -1;
     position: absolute;
@@ -39,12 +39,12 @@ button::before {
     transition: transform 0.45s ease-in-out;
 }
 
-button:hover {
+.big-button:hover {
     cursor: pointer;
     color: #161616;
 }
 
-button:hover::before {
+.big-button:hover::before {
     transform: translate3d(50%, 50%, 0) scale3d(15, 15, 15);
 }
 
@@ -60,7 +60,7 @@ button:hover::before {
     position: absolute;
     /* z-index: 2; */
     width: 80%;
-    padding: 20px;
+    padding: 14px;
     text-align: center;
 }
 
@@ -115,8 +115,6 @@ button:hover::before {
 }
 
 .featured-buttons {
-    margin-top: 10px;
-    margin-bottom: 10px;
     border-radius: 24px;
     display: inline-flex;
     align-items: center;
