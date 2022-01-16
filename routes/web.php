@@ -35,6 +35,8 @@ Route::post('/register', [LoginController::class, 'register']);
 
 // Garth Asu
 Route::get('/propertiesdetail/{id}', [PropertyController::class, 'viewPropertyDetail']);
+Route::get('/properties/update/{id}', [PropertyController::class, 'viewBuildingUpdate']);
+Route::patch('/properties/update/{id}', [PropertyController::class, 'updatePropertyDesc'])->name('updatePropertyDesc');
 
 //Logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
