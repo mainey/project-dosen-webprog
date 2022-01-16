@@ -11,7 +11,9 @@ class PropertyController extends Controller
 {
     public function viewHomePage()
     {
-        return view('properties.propertiesHome');
+        $property = Property::paginate(6);
+
+        return view('properties.propertiesHome', compact('property'));
     }
 
     public function viewPropertyDetail($id)
