@@ -21,7 +21,7 @@
             <div class="property-buttons" style="margin-top: 1rem;">
                 {{-- TODO: Kasih guard buat admin / user / guest --}}
                 <a href="#" class="btn btn-secondary" >Rent This Property</a>
-                <a href="#" class="btn text-light btn-success">Update</a>
+                <a href="/properties/update/{{ $property->id }}" class="btn text-light btn-success">Update</a>
                 <a href="#" class="btn text-light btn-danger">Delete</a>
             </div>
         </div>

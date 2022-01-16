@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="p-1">
-                    <h5>Address:</h5>
+                    <h5>Location:</h5>
                     <div class="form-group">
                         <input type="text" class="form-control" name="location" value="{{ $property->location }}">
                     </div>
@@ -70,6 +70,14 @@
                 <div>
                     TODO : Update Gambar
                 </div>
+
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                    <br>
+                    <i>{{$error}}</i>
+                    @endforeach
+                @endif
+
                 <div class="property-buttons justify-content-center" style="margin-top: 0.8rem;">
                     <button type="submit" class="btn text-light btn-success" style="">Save Changes</button>
                     <a href="{{ back() }}" class="btn text-light btn-danger">Cancel</a>

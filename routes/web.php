@@ -33,8 +33,10 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [LoginController::class, 'registerUser'])->name("registerUser");
 Route::post('/register', [LoginController::class, 'register']);
 
-// Garth Asu
+// View Detail
 Route::get('/propertiesdetail/{id}', [PropertyController::class, 'viewPropertyDetail']);
+
+// Update
 Route::get('/properties/update/{id}', [PropertyController::class, 'viewBuildingUpdate']);
 Route::patch('/properties/update/{id}', [PropertyController::class, 'updatePropertyDesc'])->name('updatePropertyDesc');
 

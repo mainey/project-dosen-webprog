@@ -30,13 +30,11 @@ class PropertyController extends Controller
     public function updatePropertyDesc($id, Request $request)
     {
         $property = Property::find($id);
-        $property->description = $request->description;
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:15|unique:properties,name,'.$id,
-            'price' => 'required|numeric|between:5000,10000000',
+            'name' => 'required|max:15|unique:properties,name,' . $id,
+            'price' => 'required|numeric|between:1000000,100000000',
             'location' => 'required|max:15',
-            'address' => 'required|max:15',
             'type' => 'required|max:10',
             'area' => 'required|max:10',
             'bed' => 'required|numeric',
@@ -66,7 +64,6 @@ class PropertyController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'location' => $request->location,
-            'address' => $request->address,
             'type' => $request->type,
             'area' => $request->area,
             'bed' => $request->bed,
@@ -77,4 +74,3 @@ class PropertyController extends Controller
         return redirect()->route('propertiesHome');
     }
 }
-
