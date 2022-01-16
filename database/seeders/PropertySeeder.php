@@ -52,7 +52,7 @@ class PropertySeeder extends Seeder
             'price' => 120000000,
             'location' => 'Adeptus Domain',
             'type' => 'Villa',
-            '' => '5',
+            'bed' => '5',
             'bathroom' => '2',
             'garage' => '2',
             'area' => '600',
