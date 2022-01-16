@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Property;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 
@@ -86,5 +87,12 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showHome()
+    {
+        $property = Property::inRandomOrder()->paginate(4);
+
+        return view('home', compact('property'));
     }
 }

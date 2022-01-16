@@ -30,42 +30,20 @@
     {{-- Buat Featured Items, bikin card templat dulu, terus pake db buat tampilin 3 aja --}}
     <div class="container">
         <div class="row row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card border-0 building-card">
-                    <a href="">
-                        <img class="card-img-top" src="{{ asset('storage/building-placeholder.jpg')}}" alt='gagal'
-                        style="max-height:500px;max-width:600px;">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">Building Name</h5>
-                        <p class="card-text">Building Desc</p>
+            @foreach ($property as $p)
+                <div class="col">
+                    <div class="card border-0 building-card">
+                        <a href="/propertiesdetail/{{$p->id}}">
+                            <img class="card-img-top" src="{{Illuminate\Support\Facades\Storage::url($p->image)}}" alt='gagal'
+                            style="max-height:500px;max-width:600px;">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $p->name }}</h5>
+                            <p class="card-text">{{ $p->description }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card border-0 building-card">
-                    <a href="">
-                        <img class="card-img-top" src="{{ asset('storage/building-placeholder.jpg')}}" alt='gagal'
-                        style="max-height:500px;max-width:600px;">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">Building Name</h5>
-                        <p class="card-text">Building Desc</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border-0 building-card">
-                    <a href="">
-                        <img class="card-img-top" src="{{ asset('storage/building-placeholder.jpg')}}" alt='gagal'
-                        style="max-height:500px;max-width:600px;">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">Building Name</h5>
-                        <p class="card-text">Building Desc</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 

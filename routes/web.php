@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Home
-Route::resource('/', HomeController::class);
+Route::get('/', [HomeController::class, 'showHome']);
 
 // About Us
 Route::get('/aboutus', [HomeController::class, 'viewAboutUs'])->name("aboutUs");
