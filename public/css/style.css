@@ -48,9 +48,13 @@ body, html {
     transform: translate3d(50%, 50%, 0) scale3d(15, 15, 15);
 }
 
-
 .btn-color {
     /* Placeholder */
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
 }
 
 /* Home Page */
@@ -138,4 +142,39 @@ body, html {
 
 .card-body {
     min-height: 230px;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+.button-login{
+    background-color: #68BBE3;
+}
+
+.property-view-title {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.underline {
+    text-decoration: underline #3cefff !important;
+    text-underline-offset: 0.3em;
+    -webkit-text-decoration-line:  underline !important;
+    -webkit-text-decoration-color: #3cefff !important;
+    -webkit-text-decoration-style: solid !important;
+    -webkit-text-decoration-thickness: 3px !important;
 }

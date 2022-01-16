@@ -38,7 +38,7 @@
                 <a class="nav-link text-light" href="{{ Route('propertiesHome') }}">Properties</a>
                 <a class="nav-link text-light" href="#">About Us</a>
                 {{-- Add guard buat login, klo udh login ubah jadi nama user --}}
-                <a class="nav-link text-light" href="#">Login / Register</a>
+                <a class="nav-link text-light" href="{{ Route('loginUser')}}">Login / Register</a>
                 </div>
             </div>
         </div>
