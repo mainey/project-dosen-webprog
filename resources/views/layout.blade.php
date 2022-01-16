@@ -47,13 +47,13 @@
                       <li><a class="dropdown-item" href="#">Profile</a></li>
                       <li><a class="dropdown-item" href="#">Another action</a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Logout</a></li>
+                      <li><a class="dropdown-item" href="/logout">Logout</a></li>
                     </ul>
                   </li>
                 @else
                     <a class="nav-link text-light" href="{{ Route('loginUser')}}">Login / Register</a>
                 @endif
-                
+
 
                 </div>
             </div>
