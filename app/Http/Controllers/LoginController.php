@@ -17,7 +17,7 @@ class LoginController extends Controller
 
     public function register(Request $request){
         $user = new User();
-        $user->name = $request->user;
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->address = $request->address;
@@ -25,7 +25,7 @@ class LoginController extends Controller
         $user->role = 'member';
         
         $user->save();
-        return redirect()->back();
+        return redirect('/');
     }
 
     public function login(Request $request){
