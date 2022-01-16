@@ -15,10 +15,10 @@
                 <label class="form-label" for="name">Full Name</label>
               <input type="text" id="name" class="form-control form-control-lg"
                 placeholder="Enter your full name here" />
-              
+
             </div>
-  
-            
+
+
             <div class="form-outline mb-2 pt-3">
                 <label class="form-label" for="email">Email</label>
               <input type="email" id="email" class="form-control form-control-lg"
@@ -35,26 +35,28 @@
                 <label class="form-label" for="address">Address</label>
               <input type="text" id="address" class="form-control form-control-lg"
                 placeholder="Enter your address" />
-              
+
             </div>
 
             <div class="form-outline mb-2 pt-3">
                 <label class="form-label" for="phone">Phone</label>
               <input type="text" id="phone" class="form-control form-control-lg"
                 placeholder="Enter a phone number" />
-              
             </div>
+
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                     <button type="button" class="button-login"
+                     style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+                </div>
+            </div>
+
           </form>
         </div>
-    
-        <div class="row justify-content-center">
-            <div class="col-1">
-                <div class="text-center text-lg-start mt-4 pt-2">
-                 <button type="button" class="button-login"
-                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
-            </div>
-        </div>
-    
+
+
+
     </div>
     </div>
 
