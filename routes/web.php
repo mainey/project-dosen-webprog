@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,7 @@ Route::resource('/', HomeController::class);
 
 // Properties
 Route::get('/properties', [PropertyController::class, 'viewHomePage'])->name("propertiesHome");
+
+
+// Login
+Route::get('/login', [LoginController::class, 'loginUser'])->name("loginUser");
