@@ -22,7 +22,8 @@
             <h2 class="p-2 featured-title">
                 Featured Properties
             </h2>
-            <a href="" class="btn bg-light ms-auto p-2 featured-buttons">More Projects</a>
+            {{-- <a href="" class="btn bg-light ms-auto p-2 featured-buttons">More Projects</a> --}}
+            <button class="btn bg-light ms-auto p-2 featured-buttons">More Projects</button>
         </div>
     </div>
 
