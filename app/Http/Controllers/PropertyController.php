@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class PropertyController extends Controller
@@ -72,5 +73,49 @@ class PropertyController extends Controller
         ]);
 
         return redirect()->route('propertiesHome');
+    }
+
+    public function viewBuildingAdd()
+    {
+        return view('properties.propertiesAdd');
+    }
+
+    public function addPropertyDesc(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:15|unique:properties,name,',
+            'price' => 'required|numeric|between:1000000,100000000',
+            'location' => 'required|max:15',
+            'type' => 'required|max:10',
+            'area' => 'required|max:10',
+            'bed' => 'required|numeric',
+            'bathroom' => 'required|numeric',
+            'garage' => 'required|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+
+        $property = new Property();
+        $property->name = $request->name;
+        $property->price = $request->price;
+        $property->location = $request->location;
+        $property->type = $request->type;
+        $property->area = $request->area;
+        $property->bed = $request->bed;
+        $property->bathroom = $request->bathroom;
+        $property->garage = $request->garage;
+        $property->description = $request->description;
+        $property->amenities = $request->amenities;
+
+        $file = $request->file('image');
+        $imageName = time() . '.' . $file->getClientOriginalExtension();
+        Storage::putFileAs('public/images', $file, $imageName);
+        $property->image = 'images/' . $imageName;
+
+        $property->save();
+
+        return redirect('/');
     }
 }
