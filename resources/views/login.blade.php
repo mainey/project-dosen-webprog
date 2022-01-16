@@ -12,36 +12,42 @@
             alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
+          <form action="/login" method="post">
+            {{csrf_field()}}
             <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
               <p class="lead fw-normal mb-0 me-3">Login</p>
             </div>
-  
+
             <!-- Email input -->
             <div class="form-outline mb-4 pt-3">
                 <label class="form-label" for="emailForm">Email address</label>
-              <input type="email" id="emailForm" class="form-control form-control-lg"
+              <input type="email" id="emailForm" name="email" class="form-control form-control-lg"
                 placeholder="Enter a valid email address" />
-              
+
             </div>
-  
+
             <!-- Password input -->
             <div class="form-outline mb-3 pt-3">
                 <label class="form-label" for="formPassword">Password</label>
-              <input type="password" id="formPassword" class="form-control form-control-lg"
+              <input type="password" id="formPassword" name="password" class="form-control form-control-lg"
                 placeholder="Enter password" />
-              
+
             </div>
-  
-            
-  
+
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                <br>
+                <i>{{$error}}</i>
+                @endforeach
+            @endif
+
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="button-login"
+              <button type="submit" class="button-login"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
               <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="{{ Route('registerUser') }}"
                   class="link-danger">Register</a></p>
             </div>
-  
+
           </form>
         </div>
       </div>

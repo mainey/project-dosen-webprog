@@ -13,7 +13,7 @@
 
             <div class="form-outline mb-2 pt-3">
                 <label class="form-label" for="name">Full Name</label>
-              <input type="text" id="name" class="form-control form-control-lg"
+              <input type="text" id="name" name="name" class="form-control form-control-lg"
                 placeholder="Enter your full name here" />
 
             </div>
@@ -21,33 +21,40 @@
 
             <div class="form-outline mb-2 pt-3">
                 <label class="form-label" for="email">Email</label>
-              <input type="email" id="email" class="form-control form-control-lg"
+              <input type="email" id="email" name="email" class="form-control form-control-lg"
                 placeholder="Enter a valid email" />
             </div>
 
             <div class="form-outline mb-2 pt-3">
                 <label class="form-label" for="password">Password</label>
-              <input type="password" id="password" class="form-control form-control-lg"
+              <input type="password" id="password" name="password" class="form-control form-control-lg"
                 placeholder="Enter password" />
             </div>
 
             <div class="form-outline mb-2 pt-3">
                 <label class="form-label" for="address">Address</label>
-              <input type="text" id="address" class="form-control form-control-lg"
+              <input type="text" id="address" name="address" class="form-control form-control-lg"
                 placeholder="Enter your address" />
 
             </div>
 
             <div class="form-outline mb-2 pt-3">
                 <label class="form-label" for="phone">Phone</label>
-              <input type="text" id="phone" class="form-control form-control-lg"
+              <input type="text" id="phone" name="phone" class="form-control form-control-lg"
                 placeholder="Enter a phone number" />
             </div>
+
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                <br>
+                <i>{{$error}}</i>
+                @endforeach
+            @endif
 
             <div class="row justify-content-center">
                 <div class="col-1">
                     <div class="text-center text-lg-start mt-4 pt-2">
-                     <button type="button" class="button-login"
+                     <button type="submit" class="button-login"
                      style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
                 </div>
             </div>
