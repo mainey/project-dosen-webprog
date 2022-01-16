@@ -30,8 +30,6 @@ class PropertyController extends Controller
 
     public function updatePropertyDesc($id, Request $request)
     {
-        $property = Property::find($id);
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:15|unique:properties,name,' . $id,
             'price' => 'required|numeric|between:1000000,100000000',
@@ -41,25 +39,27 @@ class PropertyController extends Controller
             'bed' => 'required|numeric',
             'bathroom' => 'required|numeric',
             'garage' => 'required|numeric',
+            'image' => 'nullable|mimes:jpg,png,jpeg'
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        // $pro_update = Property::find($id);
-        // if ($request->hasFile('image')) {
-        //     $file = $request->file('image');
-        //     $imageName = time() . '.' . $file->getClientOriginalExtension();
+        $property = Property::find($id);
 
-        //     Storage::putFileAs('public/images', $file, $imageName);
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $imageName = time() . '.' . $file->getClientOriginalExtension();
 
-        //     Storage::delete('public/' . $pro_update->image);
+            Storage::putFileAs('public/images', $file, $imageName);
 
-        //     Property::where('id', $id)->update([
-        //         'image' => 'images/' . $imageName,
-        //     ]);
-        // }
+            Storage::delete('public/' . $property->image);
+
+            Property::where('id', $id)->update([
+                'image' => 'images/' . $imageName,
+            ]);
+        }
 
         Property::where('id', $id)->update([
             'name' => $request->name,
@@ -70,6 +70,8 @@ class PropertyController extends Controller
             'bed' => $request->bed,
             'bathroom' => $request->bathroom,
             'garage' => $request->garage,
+            'amenities' => $request->amenities,
+            'description' => $request->description,
         ]);
 
         return redirect()->route('propertiesHome');

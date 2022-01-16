@@ -42,7 +42,7 @@ Route::patch('/properties/update/{id}', [PropertyController::class, 'updatePrope
 
 // Add Property
 Route::get('/properties/add', [PropertyController::class, 'viewBuildingAdd']);
-Route::post('/properties/add', [PropertyController::class, 'addPropertyDesc'])->name('updatePropertyDesc');
+Route::post('/properties/add', [PropertyController::class, 'addPropertyDesc']);
 
 //Logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');

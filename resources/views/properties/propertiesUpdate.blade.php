@@ -67,6 +67,30 @@
                         <input type="text" class="form-control" name="garage" value="{{ $property->garage }}">
                     </div>
                 </div>
+
+                <div class="p-1">
+                    <h5>Amenities:</h5>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="amenities" value="{{ $property->amenities }}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-1">
+                    <h5>Description:</h5>
+                    <div class="form-group">
+                        <textarea type="text" class="form-control" rows="3" name="description">
+                            {{ $property->description }}
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="p-1">
+                    Image
+                    <input type="file" name="image" class="form-control">
+                </div>
+
                 <div>
                     TODO : Update Gambar
                 </div>
