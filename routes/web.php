@@ -24,7 +24,9 @@ Route::get('/properties', [PropertyController::class, 'viewHomePage'])->name("pr
 
 // Login
 Route::get('/login', [LoginController::class, 'loginUser'])->name("loginUser");
+Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [LoginController::class, 'registerUser'])->name("registerUser");
+Route::post('/register', [LoginController::class, 'register']);
 
 // fix me v
 Route::get('/propertiesdetail/{id}', [PropertyController::class, 'viewPropertyDetail']);

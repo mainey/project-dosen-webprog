@@ -19,10 +19,13 @@ class LoginController extends Controller
         $user = new User();
         $user->name = $request->user;
         $user->email = $request->email;
-        $user->address = $request->address;
         $user->password = bcrypt($request->password);
+        $user->address = $request->address;
         $user->phone = $request->phone;
         $user->role = 'member';
+        
+        $user->save();
+        return redirect()->back();
     }
 
     public function login(Request $request){
@@ -30,7 +33,7 @@ class LoginController extends Controller
         $password = $request->password;
 
         if(auth()->attempt(['email'=>$email, 'password'=>$password])){
-            return redirect('/home');
+            return redirect('/');
         }else{
             return redirect('/login');
         }
