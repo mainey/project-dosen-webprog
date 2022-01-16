@@ -22,6 +22,8 @@ Route::resource('/', HomeController::class);
 // Properties
 Route::get('/properties', [PropertyController::class, 'viewHomePage'])->name("propertiesHome");
 
-
 // Login
 Route::get('/login', [LoginController::class, 'loginUser'])->name("loginUser");
+
+// fix me v
+Route::get('/properties/view', [PropertyController::class, 'viewBuildingDetail'])->name("viewBuildingDetail");
