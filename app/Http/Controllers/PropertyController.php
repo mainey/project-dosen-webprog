@@ -11,11 +11,13 @@ class PropertyController extends Controller
 {
     public function viewHomePage()
     {
-        if (auth()->user()->role == 'admin') {
-            $property = Property::paginate(6);
-        } else {
-            $property = Property::where('rented', 0)
-                ->paginate(6);
+        $property = Property::where('rented', 0)
+                    ->paginate(6);
+
+        if (auth()->user() != null) {
+            if (auth()->user()->role == 'admin') {
+                $property = Property::paginate(6);
+            }
         }
 
         return view('properties.propertiesHome', compact('property'));
