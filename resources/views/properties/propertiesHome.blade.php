@@ -19,7 +19,7 @@
             <div class="row">
                 @foreach ($property as $p)
                     <div class="col-md-4 mt-5 text-white">
-                        <div class="card-box-a card-shadow">
+                        <div class="card-box-a card-shadow building-card">
                         <a href="/propertiesdetail/{{$p->id}}">
                             <div class="img-box-a">
                                 <img src="{{Illuminate\Support\Facades\Storage::url($p->image)}}" alt="" class="img-a img-fluid rounded-top">
@@ -29,7 +29,7 @@
                             <div class="card-overlay-a-content">
                                 <div class="card-header-a">
                                     <div class="card-title-a p-2">
-                                    <h2><p>{{$p->name}}</p></h2>
+                                    <h2><p><b>{{$p->name}}</b></p></h2>
                                         <p>{{$p->location}}</p>
                                     </div>
                                 </div>
