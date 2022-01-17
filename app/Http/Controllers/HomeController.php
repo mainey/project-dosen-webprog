@@ -91,7 +91,9 @@ class HomeController extends Controller
 
     public function showHome()
     {
-        $property = Property::inRandomOrder()->paginate(4);
+        $property = Property::inRandomOrder()
+            ->where('rented', 0)
+            ->paginate(4);
 
         return view('home', compact('property'));
     }
