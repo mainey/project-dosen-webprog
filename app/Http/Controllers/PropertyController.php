@@ -169,4 +169,8 @@ class PropertyController extends Controller
 
         return redirect('/properties');
     }
+
+    public function transaction(){
+        return view('transaction');
+    }   
 }

@@ -220,13 +220,13 @@ details[open] > *:last-child {
 }
 
 /* Format tables */
-table {
+/* table {
 	border-collapse: collapse;
 	width: 100%;
 	margin: 1.5rem 0;
-}
+} */
 
-td,
+/* td,
 th {
 	border: 1px solid var(--border);
 	text-align: left;
@@ -236,12 +236,12 @@ th {
 th {
 	background: var(--accent-bg);
 	font-weight: bold;
-}
+} */
 
-tr:nth-child(even) {
-  	/* Set every other cell slightly darker. Improves readability. */
+/* tr:nth-child(even) {
+  	/* Set every other cell slightly darker. Improves readability. 
   	background: var(--accent-bg);
-}
+} */
 
 table caption {
 	font-weight: bold;
