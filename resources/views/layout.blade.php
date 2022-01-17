@@ -27,6 +27,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+<<<<<<< Updated upstream
     @if (Request::path() == '/')
         <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-md">
         @else
@@ -44,6 +45,21 @@
             <div class="navbar-nav">
                 <a class="nav-link text-light fw-bold {{ Request::path() == '/' ? 'text-light' : 'text-dark' }}"
                     href="{{ Route('propertiesHome') }}" style="align-self: center;">
+=======
+    @if(Request::path() == '/')
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-md">
+    @else
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: white; box-shadow: 0 4px 4px 0 rgba(0,0,0,.2);">
+    @endif
+        <div class="container-fluid col-md-10">
+            <a class="navbar-brand {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="{{ url('/') }}"><img src="{{asset("storage/DRE_bg_1_25.png")}}" class="rounded" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-link text-light fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="{{ Route('propertiesHome') }}" style="align-self: center;">
+>>>>>>> Stashed changes
                     Properties
                 </a>
                 <a class="nav-link text-light fw-bold {{ Request::path() == '/' ? 'text-light' : 'text-dark' }}"
