@@ -24,6 +24,8 @@ Route::get('/aboutus', [HomeController::class, 'viewAboutUs'])->name("aboutUs");
 
 // Properties
 Route::get('/properties', [PropertyController::class, 'viewHomePage'])->name("propertiesHome");
+Route::get('/search', [PropertyController::class, 'searchForProperty']);
+Route::post('/search', [PropertyController::class, 'searchForProperty']);
 
 // Login
 Route::get('/login', [LoginController::class, 'loginUser'])->name("loginUser");

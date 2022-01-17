@@ -129,4 +129,11 @@ class PropertyController extends Controller
 
         return redirect('/');
     }
+
+    public function searchForProperty(Request $request)
+    {
+        $search = $request->search;
+        $property = Property::where('name', 'LIKE', '%' . $search . '%')->paginate(6);
+        return view('properties.propertiesSearch', compact('property', 'search'));
+    }
 }

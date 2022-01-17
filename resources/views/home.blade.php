@@ -10,8 +10,9 @@
 <div class="home-title title-text">Find your perfect Home</div>
 
 <div class="home-title title-search">
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search for your dream home" aria-label="Search">
+    <form class="d-flex" action="/search" method="post">
+        {{csrf_field()}}
+        <input class="form-control me-2" type="text" name="search" placeholder="Search for your dream home" aria-label="Search">
         <button class="btn bg-light" type="submit">Search</button>
     </form>
 </div>
