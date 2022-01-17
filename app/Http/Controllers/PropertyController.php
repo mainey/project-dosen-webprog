@@ -140,6 +140,18 @@ class PropertyController extends Controller
         return view('properties.propertiesSearch', compact('property', 'search'));
     }
 
+    public function deleteproperty($id)
+    {
+        $property = Property::find($id);
+
+        if (isset($property)) {
+            Storage::delete('storage/img/' . $property->image);
+            $property->delete();
+        }
+        return redirect('properties');
+    }
+
+
     public function rent($id)
     {
         $user = Auth::user();
