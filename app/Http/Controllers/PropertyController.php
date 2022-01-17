@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Property;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -12,7 +15,7 @@ class PropertyController extends Controller
     public function viewHomePage()
     {
         $property = Property::where('rented', 0)
-                    ->paginate(6);
+            ->paginate(6);
 
         if (auth()->user() != null) {
             if (auth()->user()->role == 'admin') {
@@ -135,5 +138,23 @@ class PropertyController extends Controller
         $search = $request->search;
         $property = Property::where('name', 'LIKE', '%' . $search . '%')->paginate(6);
         return view('properties.propertiesSearch', compact('property', 'search'));
+    }
+
+    public function rent($id)
+    {
+        $user = Auth::user();
+
+        // Bikin Transaction
+        $trans = new Transaction();
+        $trans->user_id = $user->id;
+        $trans->property_id = $id;
+        $trans->save();
+
+        // Flag dah kejual
+        $prop = Property::find($id);
+        $prop->rented = 1;
+        $prop->save();
+
+        return redirect('/properties');
     }
 }

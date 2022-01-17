@@ -21,7 +21,7 @@
             @if (auth()->user() != null)
             <div class="property-buttons" style="margin-top: 1rem;">
                 {{-- TODO: Kasih guard buat admin / user / guest --}}
-                <a href="#" class="btn btn-secondary" >Rent This Property</a>
+                <a href="/properties/rent/{{ $property->id }}" class="btn btn-secondary" >Rent This Property</a>
                 @if (auth()->user()->role == 'admin')
                     <a href="/properties/update/{{ $property->id }}" class="btn text-light btn-success">Update</a>
                     <a href="#" class="btn text-light btn-danger">Delete</a>
