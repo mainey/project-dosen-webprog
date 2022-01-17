@@ -62,6 +62,24 @@
                             <li><a class="dropdown-item fw-bold text-dark" href="/profile">
                                     Profile
                                 </a></li>
+                            <li><a class="dropdown-item fw-bold text-dark" href="#">
+                                    Another action
+                                </a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item fw-bold text-dark" href="/logout">
+                                    Logout
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-light dropdown-toggle fw-bold {{ Request::path() == '/' ? 'text-light' : 'text-dark' }}"
+                            href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hello, {{ auth()->user()->name }}!
+                        </a>
+                        <ul class="dropdown-menu fw-bold {{ Request::path() == '/' ? 'text-light' : 'text-dark' }}"
+                            aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item fw-bold text-dark" href="/transaction">
                                     View Transaction
                                 </a></li>
