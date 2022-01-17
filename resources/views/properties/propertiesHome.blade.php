@@ -7,6 +7,10 @@
 <div class="col-md-10 mx-auto" id="content">
     <div class="container">
         <div class="container mb-5">
+            <div>
+                <h1 class="overline" style="margin-top: 30px; font-weight: bold;">Our Properties</h1>
+                <span class="text-muted">Check it out!</span>
+            </div>
             <div class="row">
                 @foreach ($property as $p)
                     <div class="col-md-4 mt-5 text-white">

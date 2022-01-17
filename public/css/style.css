@@ -172,6 +172,15 @@ ul {
     margin-bottom: 10px;
 }
 
+.overline {
+    text-decoration: overline #3cefff !important;
+    text-underline-offset: 0.3em;
+    -webkit-text-decoration-line:  overline !important;
+    -webkit-text-decoration-color: #3cefff !important;
+    -webkit-text-decoration-style: solid !important;
+    -webkit-text-decoration-thickness: 3px !important;
+}
+
 .underline {
     text-decoration: underline #3cefff !important;
     text-underline-offset: 0.3em;
