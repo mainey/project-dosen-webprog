@@ -49,7 +49,7 @@
                             Hello, {{auth()->user()->name}}!
                     </a>
                     <ul class="dropdown-menu fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item fw-bold text-dark" href="#">
+                        <li><a class="dropdown-item fw-bold text-dark" href="/profile">
                             Profile
                         </a></li>
                         <li><a class="dropdown-item fw-bold text-dark" href="#">
