@@ -10,6 +10,16 @@ body, html {
     background-position: center center;
 }
 
+.normal-button-in-flex {
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 34px;
+    margin-bottom: 34px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
 .big-button {
     z-index: 1;
     position: relative;

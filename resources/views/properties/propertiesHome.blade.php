@@ -7,9 +7,14 @@
 <div class="col-md-10 mx-auto" id="content">
     <div class="container">
         <div class="container mb-5">
-            <div>
-                <h1 class="overline" style="margin-top: 30px; font-weight: bold;">Our Properties</h1>
-                <span class="text-muted">Check it out!</span>
+            <div class="d-flex flex-row justify-content-between">
+                <div class="d-flex flex-column">
+                    <h1 class="overline" style="margin-top: 30px; font-weight: bold;">Our Properties</h1>
+                    <span class="text-muted">Check it out!</span>
+                </div>
+                <a href="" class="d-flex btn btn-success normal-button-in-flex">
+                    Add Property
+                </a>
             </div>
             <div class="row">
                 @foreach ($property as $p)
