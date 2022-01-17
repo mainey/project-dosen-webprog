@@ -51,3 +51,6 @@ Route::get('/properties/rent/{id}', [PropertyController::class, 'rent']);
 
 //Logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+
+//Transaction
+Route::get('/transaction',[PropertyController::class,'transaction'])->name('transaction');
