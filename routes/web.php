@@ -59,3 +59,6 @@ Route::delete('/properties/delete/{id}', [PropertyController::class, 'deleteprop
 Route::get('/transaction', [PropertyController::class, 'transaction'])->name('transaction');
 
 Route::get('profile', [LoginController::class, 'profile']);
+
+//bayar
+Route::get('/paid', [PropertyController::class, 'paid']);

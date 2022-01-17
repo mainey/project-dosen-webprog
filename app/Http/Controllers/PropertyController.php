@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use App\Models\Transaction;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -174,11 +175,21 @@ class PropertyController extends Controller
     {
         if (auth()->user()->role == 'admin') {
             $transactions = Transaction::all();
+            $user = User::all();
         } else {
             $transactions = Transaction::where('user_id', auth()->user()->id)->get();
+            $user = User::where('id', auth()->user()->id)->get();
         }
+        return view('transaction', compact('transactions', 'user'));
+    }
 
-
-        return view('transaction', compact('transactions'));
+    public function paid()
+    {
+        $user = Auth::user();
+        $transaction = $user->transaction;
+        foreach ($transaction as $T) {
+            $T->delete();
+        }
+        return redirect('/');
     }
 }
