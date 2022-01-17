@@ -49,11 +49,8 @@
                             Hello, {{auth()->user()->name}}!
                     </a>
                     <ul class="dropdown-menu fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item fw-bold text-dark" href="#">
-                            Profile
-                        </a></li>
-                        <li><a class="dropdown-item fw-bold text-dark" href="#">
-                            Another action
+                        <li><a class="dropdown-item fw-bold text-dark" href="/transaction">
+                            View Transaction
                         </a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item fw-bold text-dark" href="/logout">
