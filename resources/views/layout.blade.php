@@ -26,35 +26,46 @@
     @if(Request::path() == '/')
     <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-md">
     @else
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #68BBE3">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="box-shadow: 0 4px 4px 0 rgba(0,0,0,.2);">
     @endif
         <div class="container-fluid col-md-10">
-            <a class="navbar-brand text-light" href="{{ url('/') }}"><b>DRE</b></a>
+            <a class="navbar-brand {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="{{ url('/') }}"><b>DRE</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                <a class="nav-link text-light" href="{{ Route('propertiesHome') }}">Properties</a>
-                <a class="nav-link text-light" href="{{ Route('aboutUs')}}">About Us</a>
+                <a class="nav-link text-light fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="{{ Route('propertiesHome') }}">
+                    Properties
+                </a>
+                <a class="nav-link text-light fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="{{ Route('aboutUs')}}">
+                    About Us
+                </a>
                 {{-- Add guard buat login, klo udh login ubah jadi nama user --}}
                 @if (auth()->user() != null)
                 <li class="nav-item dropdown">
-                    <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Hello, {{auth()->user()->name}}!
+                    <a class="nav-link text-light dropdown-toggle  {{Request::path() == '/' ? 'text-light' : 'text-dark'}}"
+                        href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hello, {{auth()->user()->name}}!
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Profile</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    <ul class="dropdown-menu fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="#">
+                            Profile
+                        </a></li>
+                        <li><a class="dropdown-item fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="#">
+                            Another action
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="/logout">
+                            Logout
+                        </a></li>
                     </ul>
                   </li>
                 @else
-                    <a class="nav-link text-light" href="{{ Route('loginUser')}}">Login / Register</a>
+                    <a class="nav-link text-light fw-bold {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="{{ Route('loginUser')}}">
+                        Login / Register
+                    </a>
                 @endif
-
-
                 </div>
             </div>
         </div>
