@@ -26,7 +26,7 @@
     @if(Request::path() == '/')
     <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-md">
     @else
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="box-shadow: 0 4px 4px 0 rgba(0,0,0,.2);">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="color: white; box-shadow: 0 4px 4px 0 rgba(0,0,0,.2);">
     @endif
         <div class="container-fluid col-md-10">
             <a class="navbar-brand {{Request::path() == '/' ? 'text-light' : 'text-dark'}}" href="{{ url('/') }}"><b>DRE</b></a>
