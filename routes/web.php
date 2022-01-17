@@ -56,3 +56,5 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middl
 Route::delete('/properties/delete/{id}', [PropertyController::class, 'deleteproperty']);
 //Transaction
 Route::get('/transaction', [PropertyController::class, 'transaction'])->name('transaction');
+
+Route::get('profile', [LoginController::class, 'profile']);
