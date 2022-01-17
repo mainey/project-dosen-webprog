@@ -170,7 +170,15 @@ class PropertyController extends Controller
         return redirect('/properties');
     }
 
-    public function transaction(){
-        return view('transaction');
-    }   
+    public function transaction()
+    {
+        if (auth()->user()->role == 'admin') {
+            $transactions = Transaction::all();
+        } else {
+            $transactions = Transaction::where('user_id', auth()->user()->id)->get();
+        }
+
+
+        return view('transaction', compact('transactions'));
+    }
 }
