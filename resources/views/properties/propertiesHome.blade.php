@@ -11,9 +11,13 @@
                     <h1 class="overline" style="margin-top: 30px; font-weight: bold;">Our Properties</h1>
                     <span class="text-muted">Check it out!</span>
                 </div>
-                <a href="/properties/add" class="d-flex btn btn-success normal-button-in-flex text-light">
-                    Add Property
-                </a>
+                @if (auth()->user() != null)
+                    @if (auth()->user()->role == 'admin')
+                        <a href="/properties/add" class="d-flex btn btn-success normal-button-in-flex text-light">
+                            Add Property
+                        </a>
+                    @endif
+                @endif
             </div>
             <div class="row">
                 @foreach ($property as $p)
