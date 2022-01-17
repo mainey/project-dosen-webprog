@@ -31,11 +31,11 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-md">
         @else
             <nav class="navbar navbar-expand-lg navbar-light sticky-top"
-                style="color: white; box-shadow: 0 4px 4px 0 rgba(0,0,0,.2);">
+                style="background-color: white; box-shadow: 0 4px 4px 0 rgba(0,0,0,.2);">
     @endif
     <div class="container-fluid col-md-10">
-        <a class="navbar-brand {{ Request::path() == '/' ? 'text-light' : 'text-dark' }}"
-            href="{{ url('/') }}"><b>DRE</b></a>
+        <a class="navbar-brand {{ Request::path() == '/' ? 'text-light' : 'text-dark' }}" href="{{ url('/') }}"><img
+                src="{{ asset('storage/DRE_bg_1_25.png') }}" class="rounded" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,24 +62,6 @@
                             <li><a class="dropdown-item fw-bold text-dark" href="/profile">
                                     Profile
                                 </a></li>
-                            <li><a class="dropdown-item fw-bold text-dark" href="#">
-                                    Another action
-                                </a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item fw-bold text-dark" href="/logout">
-                                    Logout
-                                </a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link text-light dropdown-toggle fw-bold {{ Request::path() == '/' ? 'text-light' : 'text-dark' }}"
-                            href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Hello, {{ auth()->user()->name }}!
-                        </a>
-                        <ul class="dropdown-menu fw-bold {{ Request::path() == '/' ? 'text-light' : 'text-dark' }}"
-                            aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item fw-bold text-dark" href="/transaction">
                                     View Transaction
                                 </a></li>
