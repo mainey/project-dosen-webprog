@@ -7,7 +7,7 @@
     <div class="col-md-10 mx-auto" id="content">
         <div class="d-flex justify-content-start">
             <a href="" class="d-flex" style="margin-right: 4rem;">
-                <img class="card-img-top rounded" src="{{ Illuminate\Support\Facades\Storage::url($property->image) }}" class="rounded" alt='...'
+                <img class="card-img-top" src="{{ Illuminate\Support\Facades\Storage::url($property->image) }}" alt='...'
                     style="max-height: 500px; max-width: 600px; margin-top: 20px;">
             </a>
             <div class="flex-column" style="align-self: center;">
